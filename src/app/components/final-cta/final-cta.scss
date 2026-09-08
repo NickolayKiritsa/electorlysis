@@ -1,0 +1,87 @@
+:host {
+  display: block;
+  position: relative;
+  background: var(--ink);
+  padding: 100px 64px;
+  text-align: center;
+  overflow: hidden;
+
+  @media (max-width: 640px) {
+    padding: 72px 24px;
+  }
+}
+
+.cta__mark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 420px;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0.06;
+}
+
+.cta__mark-l,
+.cta__mark-s {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 280px;
+  line-height: 1;
+  color: var(--milk);
+}
+
+.cta__mark-s {
+  margin-left: -46px;
+}
+
+.cta__mark-needle {
+  position: absolute;
+  top: 6%;
+  left: 57%;
+  width: 3px;
+  height: 82%;
+  background: var(--milk);
+  transform: rotate(20deg);
+  transform-origin: top;
+}
+
+.cta__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+
+  h2 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: 42px;
+    color: var(--milk);
+  }
+
+  p {
+    font-size: 15px;
+    color: #e7d9c2;
+    max-width: 440px;
+  }
+}
+
+.cta__actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cta__phone {
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: underline;
+  color: var(--milk);
+}

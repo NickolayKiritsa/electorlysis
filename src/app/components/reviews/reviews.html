@@ -1,0 +1,76 @@
+<section class="reviews" id="reviews">
+  <div class="reviews__head reveal" appRevealOnScroll>
+    <span class="reviews__eyebrow">Reviews</span>
+    <h2>What Clients Are Saying</h2>
+
+    <div class="reviews__aggregate">
+      <span class="reviews__score">{{ aggregateScore }}</span>
+      <span class="reviews__stars" aria-hidden="true">
+        @for (i of [1, 2, 3, 4, 5]; track i) {
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.7l1-5.9L3.5 9.7l5.9-.8L12 3.5z"></path></svg>
+        }
+      </span>
+      <span class="reviews__count">{{ aggregateCount }} reviews on</span>
+      <span class="reviews__google-badge" aria-hidden="true">G</span>
+      <a
+        class="reviews__link"
+        href="https://www.google.com/search?q=Luxury+Skin+Electrolysis+Kirkland+WA+reviews"
+        target="_blank"
+        rel="noopener"
+        >Google</a
+      >
+    </div>
+  </div>
+
+  <div class="reviews__carousel reveal" appRevealOnScroll [appRevealOnScrollDelay]="100">
+    <button
+      type="button"
+      class="reviews__nav reviews__nav--prev"
+      aria-label="Previous reviews"
+      (click)="scrollByCard(-1)"
+    >
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 5l-7 7 7 7"></path></svg>
+    </button>
+
+    <ul class="reviews__track" #track>
+      @for (review of reviews; track review.name) {
+        <li class="review-card">
+          <div class="review-card__head">
+            <span class="review-card__avatar" aria-hidden="true">{{ review.initial }}</span>
+            <div>
+              <div class="review-card__name">{{ review.name }}</div>
+              <div class="review-card__meta">
+                <span class="review-card__stars" aria-hidden="true">
+                  @for (i of [1, 2, 3, 4, 5]; track i) {
+                    <svg
+                      viewBox="0 0 24 24"
+                      [attr.fill]="i <= review.rating ? 'currentColor' : 'none'"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                    >
+                      <path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.7l1-5.9L3.5 9.7l5.9-.8L12 3.5z"></path>
+                    </svg>
+                  }
+                </span>
+                <span class="review-card__time">{{ review.relativeTime }}</span>
+              </div>
+            </div>
+            <span class="review-card__google" aria-label="Posted on Google">G</span>
+          </div>
+          <p class="review-card__text">{{ review.text }}</p>
+        </li>
+      }
+    </ul>
+
+    <button
+      type="button"
+      class="reviews__nav reviews__nav--next"
+      aria-label="Next reviews"
+      (click)="scrollByCard(1)"
+    >
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 5l7 7-7 7"></path></svg>
+    </button>
+  </div>
+
+  <p class="reviews__disclaimer">Mock reviews shown for preview — swap in the studio's real Google reviews once available.</p>
+</section>

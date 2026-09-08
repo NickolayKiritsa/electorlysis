@@ -1,0 +1,65 @@
+<footer class="footer">
+  <div class="footer__grid">
+    <div class="footer__brand">
+      <div class="footer__mark-row">
+        <span class="footer__mark" aria-hidden="true">
+          <span>L</span><span>S</span>
+          <span class="footer__mark-needle"></span>
+        </span>
+        <span class="footer__name">Luxury Skin Electrolysis</span>
+      </div>
+      <p>Private electrolysis studio in Kirkland, WA. By appointment only.</p>
+      <div class="footer__social">
+        <a href="#" class="footer-link footer-social-link" aria-label="Instagram">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle>
+          </svg>
+          <span>Instagram</span>
+        </a>
+        <a href="#" class="footer-link footer-social-link" aria-label="Facebook">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+            <path
+              d="M13.8 8.4h-1.1c-.5 0-.9.4-.9.9v1.4h2l-.3 2h-1.7V19h-2v-6.3H8.2v-2h1.6V9.1c0-1.6 1-2.7 2.6-2.7h1.4z"
+              fill="currentColor"
+              stroke="none"
+            ></path>
+          </svg>
+          <span>Facebook</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <h5>Explore</h5>
+      <a href="#services" class="footer-link" (click)="$event.preventDefault(); sectionNav.goTo('services')">Services</a>
+      <a href="#process" class="footer-link" (click)="$event.preventDefault(); sectionNav.goTo('process')">How It Works</a>
+      <a href="#pricing" class="footer-link" (click)="$event.preventDefault(); sectionNav.goTo('pricing')">Pricing</a>
+      <a href="#faq" class="footer-link" (click)="$event.preventDefault(); sectionNav.goTo('faq')">FAQ</a>
+    </div>
+
+    <div class="footer__col">
+      <h5>Visit</h5>
+      <span>156 Lake Street S</span>
+      <span>Kirkland, WA 98033</span>
+      <span>By appointment &middot; Tue&ndash;Sat</span>
+    </div>
+
+    <div class="footer__col">
+      <h5>Contact</h5>
+      <a href="tel:+14255550148" class="footer-link">(425) 555-0148</a>
+      <a href="mailto:hello@luxuryskinelectrolysis.com" class="footer-link">hello&#64;luxuryskinelectrolysis.com</a>
+      <a href="#visit" class="footer__cta" (click)="$event.preventDefault(); sectionNav.goTo('visit')">Book Consultation</a>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <span>&copy; {{ year }} Luxury Skin Electrolysis. All rights reserved.</span>
+    <div class="footer__legal">
+      <a routerLink="/privacy-policy" class="footer-link">Privacy Policy</a>
+      <a routerLink="/terms" class="footer-link">Terms of Service</a>
+    </div>
+  </div>
+</footer>

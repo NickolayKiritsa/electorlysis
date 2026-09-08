@@ -1,0 +1,51 @@
+<section class="about">
+  <div class="about__grid">
+    <h2 class="about__statement reveal" appRevealOnScroll>
+      You've plucked. Waxed. Lasered. It still comes back.
+      <span class="about__statement-muted"
+        >Electrolysis is the one method the FDA calls permanent</span
+      >
+      &mdash; every hair color, every skin tone.
+    </h2>
+    <div class="about__approach reveal" appRevealOnScroll [appRevealOnScrollDelay]="120">
+      <span class="about__label">Our Approach</span>
+      <p>
+        Luxury Skin is a single-practitioner studio. Every session is one-on-one
+        with a licensed electrologist &mdash; no rotating staff, no rushed
+        appointments.
+      </p>
+    </div>
+  </div>
+
+  <div class="about__bio reveal" appRevealOnScroll>
+    <div class="about__photo">
+      <picture>
+        <source
+          type="image/webp"
+          srcset="images/practitioner-photo-320.webp 320w, images/practitioner-photo-440.webp 440w"
+          sizes="(max-width: 640px) 180px, 220px"
+        />
+        <img
+          src="images/practitioner-photo-440.jpg"
+          srcset="images/practitioner-photo-320.jpg 320w, images/practitioner-photo-440.jpg 440w"
+          sizes="(max-width: 640px) 180px, 220px"
+          width="440"
+          height="660"
+          loading="lazy"
+          decoding="async"
+          alt="Claire Whitfield, founder and licensed electrologist"
+        />
+      </picture>
+    </div>
+    <div class="about__quote">
+      <p class="about__quote-text">
+        &ldquo;My goal isn't more appointments &mdash; it's your last
+        appointment.&rdquo;
+      </p>
+      <div>
+        <div class="about__quote-name">Claire Whitfield</div>
+        <div class="about__quote-role">Founder &amp; Licensed Electrologist</div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+@if (!consent.hasDecided()) {
+  <div class="consent" role="region" aria-label="Cookie consent">
+    <p class="consent__text">
+      We use a minimal set of cookies to run this site and, if you allow it, to
+      understand how it's used. No data is sold. See our
+      <a routerLink="/privacy-policy">Privacy Policy</a> for details.
+    </p>
+    <div class="consent__actions">
+      <button type="button" class="consent__btn consent__btn--ghost" (click)="necessaryOnly()">
+        Necessary only
+      </button>
+      <button type="button" class="consent__btn consent__btn--solid" (click)="acceptAll()">
+        Accept all
+      </button>
+    </div>
+  </div>
+}

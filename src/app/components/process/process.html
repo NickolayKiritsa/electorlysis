@@ -1,0 +1,24 @@
+<section class="process" id="process">
+  <div class="process__grid">
+    <div class="process__intro reveal" appRevealOnScroll>
+      <h2>What to<br />expect.</h2>
+      <p>
+        Timelines vary by hair density and area &mdash; this is the shape of
+        it, not a script.
+      </p>
+      <a href="#visit">Book your consultation &rarr;</a>
+    </div>
+
+    <div class="process__list">
+      @for (step of steps; track step.number; let i = $index) {
+        <div class="process__row reveal" appRevealOnScroll [appRevealOnScrollDelay]="i * 90">
+          <span class="process__number">{{ step.number }}</span>
+          <div>
+            <h4>{{ step.title }}</h4>
+            <p>{{ step.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

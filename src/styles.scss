@@ -1,1 +1,217 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+
+:root {
+  --milk: #faf6ef;
+  --cream: #f3ecdd;
+  --beige: #efe4d0;
+  --ink: #3c2e22;
+  --ink-deep: #2a2015;
+  --body: #4a3b2e;
+  --body-soft: #5a4b3c;
+  --muted: #8a7a66;
+  --muted-on-dark: #b7a488;
+  --hairline: rgba(169, 130, 92, 0.35);
+  --hairline-on-dark: rgba(250, 246, 239, 0.14);
+  --accent: #a9825c;
+  --sage: #8a9a78;
+
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Manrope', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --reveal-duration: 600ms;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--body);
+  background: var(--milk);
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 12px;
+  z-index: 1000;
+  padding: 14px 22px;
+  background: var(--ink);
+  color: var(--milk);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 0 0 4px 4px;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+#main-content:focus {
+  outline: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 34px;
+  border: 1px solid currentColor;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.btn-ink {
+  color: var(--ink);
+}
+
+.btn-ink:hover {
+  background: var(--ink);
+  color: var(--milk);
+}
+
+.btn-milk {
+  color: var(--milk);
+}
+
+.btn-milk:hover {
+  background: var(--milk);
+  color: var(--ink);
+}
+
+.link-accent {
+  color: var(--accent);
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+
+.link-accent:hover {
+  color: #8b6a4a;
+}
+
+.legal {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 100px 24px 140px;
+
+  h1 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: 42px;
+    color: var(--ink);
+  }
+
+  .legal__updated {
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .legal__notice {
+    margin-top: 32px;
+    padding: 20px 24px;
+    background: var(--cream);
+    border: 1px solid var(--hairline);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--body-soft);
+    font-style: italic;
+  }
+
+  h2 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--ink);
+    margin-top: 48px;
+    margin-bottom: 14px;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--body-soft);
+    margin-bottom: 14px;
+  }
+
+  ul {
+    margin: 0 0 14px;
+    padding-left: 20px;
+
+    li {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--body-soft);
+      margin-bottom: 6px;
+    }
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: underline;
+    font-weight: 600;
+  }
+
+  strong {
+    color: var(--ink);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity var(--reveal-duration) var(--ease-out),
+    transform var(--reveal-duration) var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

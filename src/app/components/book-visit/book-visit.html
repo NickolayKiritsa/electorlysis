@@ -1,0 +1,119 @@
+<section class="visit" id="visit">
+  <div class="visit__grid">
+
+    <div class="visit__card reveal" appRevealOnScroll>
+      @if (!submitted()) {
+        <h2>Book Your Visit</h2>
+        <p class="visit__subtext">Leave your number and we'll call to set up your consultation.</p>
+
+        <form class="visit__form" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+          <div class="field">
+            <label for="visit-name">Your name</label>
+            <div class="field__control">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                <circle cx="12" cy="8" r="3.4"></circle>
+                <path d="M5 20c0-3.9 3.1-6.2 7-6.2s7 2.3 7 6.2"></path>
+              </svg>
+              <input
+                id="visit-name"
+                type="text"
+                formControlName="name"
+                placeholder="Jane Doe"
+                [attr.aria-invalid]="name.invalid && name.touched"
+              />
+            </div>
+            @if (name.invalid && name.touched) {
+              <span class="field__error">Please share your name.</span>
+            }
+          </div>
+
+          <div class="field">
+            <label for="visit-phone">Your number</label>
+            <div class="field__control">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                <path d="M6 3h3l1.5 4.5-2 1.5a12 12 0 0 0 6.5 6.5l1.5-2L21 15v3c0 1.1-.9 2-2 2C10.9 20 4 13.1 4 5c0-1.1.9-2 2-2Z"></path>
+              </svg>
+              <input
+                id="visit-phone"
+                type="tel"
+                formControlName="phone"
+                placeholder="(555) 555-0132"
+                [attr.aria-invalid]="phone.invalid && phone.touched"
+              />
+            </div>
+            @if (phone.invalid && phone.touched) {
+              <span class="field__error">A valid phone number helps us reach you.</span>
+            }
+          </div>
+
+          <div class="field">
+            <label for="visit-message">Your message <span class="field__optional">(optional)</span></label>
+            <div class="field__control field__control--textarea">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                <path d="M21 11.5a8.5 8.5 0 0 1-11.8 7.8L4 21l1.7-5.2A8.5 8.5 0 1 1 21 11.5Z"></path>
+              </svg>
+              <textarea
+                id="visit-message"
+                formControlName="message"
+                rows="3"
+                placeholder="Tell us what you're hoping to treat, or ask a question."
+              ></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="visit__submit">Send Message</button>
+        </form>
+      } @else {
+        <div class="visit__success">
+          <span class="visit__success-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M5 13l4 4L19 7"></path>
+            </svg>
+          </span>
+          <h2>Message sent.</h2>
+          <p>We'll call you shortly to set up your consultation.</p>
+        </div>
+      }
+    </div>
+
+    <div class="visit__map reveal" appRevealOnScroll [appRevealOnScrollDelay]="120">
+      <div class="map">
+        <iframe
+          class="map__frame"
+          title="Map showing Luxury Skin Electrolysis at 156 Lake Street S, Kirkland, WA 98033"
+          src="https://www.google.com/maps?q=156+Lake+Street+S,+Kirkland,+WA+98033&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+
+      <div class="location-card">
+        <div class="location-card__brand">
+          <span class="location-card__mark" aria-hidden="true">
+            <span>L</span><span>S</span>
+            <span class="location-card__mark-needle"></span>
+          </span>
+          <div>
+            <div class="location-card__name">Luxury Skin Electrolysis</div>
+            <div class="location-card__category">Electrolysis Studio &middot; By Appointment</div>
+          </div>
+        </div>
+        <div class="location-card__address">156 Lake Street S, Kirkland, WA 98033</div>
+        <div class="location-card__actions">
+          <a
+            class="btn btn-ink location-card__btn"
+            href="https://www.google.com/maps/search/?api=1&query=156+Lake+Street+S%2C+Kirkland%2C+WA+98033"
+            target="_blank"
+            rel="noopener"
+            >Directions</a
+          >
+          <a class="location-card__btn location-card__btn--ghost" href="tel:+14255550148">Call</a>
+          <button type="button" class="location-card__btn location-card__btn--ghost" (click)="copyAddress()">
+            {{ copied() ? 'Copied' : 'Copy address' }}
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

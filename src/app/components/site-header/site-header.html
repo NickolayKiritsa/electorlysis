@@ -1,0 +1,74 @@
+<div class="ticker" role="marquee" aria-label="Studio highlights">
+  <div class="ticker__track" [class.ticker__track--paused]="tickerPaused()">
+    @for (group of [0, 1]; track group) {
+      <ul class="ticker__group" [attr.aria-hidden]="group === 1 ? 'true' : null">
+        @for (item of tickerItems; track $index) {
+          <li>
+            {{ item }}
+            <span class="ticker__sep" aria-hidden="true">&#10022;</span>
+          </li>
+        }
+      </ul>
+    }
+  </div>
+  <button
+    type="button"
+    class="ticker__toggle"
+    [attr.aria-pressed]="tickerPaused()"
+    [attr.aria-label]="tickerPaused() ? 'Resume scrolling highlights' : 'Pause scrolling highlights'"
+    (click)="toggleTicker()"
+  >
+    @if (tickerPaused()) {
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l12 7-12 7z"></path></svg>
+    } @else {
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h4v14H7zM13 5h4v14h-4z"></path></svg>
+    }
+  </button>
+</div>
+
+<header class="nav">
+  <nav class="nav__links" aria-label="Primary">
+    <a href="#services" (click)="$event.preventDefault(); goToSection('services')">Services</a>
+    <a href="#process" (click)="$event.preventDefault(); goToSection('process')">How It Works</a>
+    <a href="#pricing" (click)="$event.preventDefault(); goToSection('pricing')">Pricing</a>
+    <a href="#faq" (click)="$event.preventDefault(); goToSection('faq')">FAQ</a>
+  </nav>
+
+  <a class="nav__brand" routerLink="/" aria-label="Luxury Skin Electrolysis, home">
+    <span class="mark" aria-hidden="true">
+      <span class="mark__l">L</span><span class="mark__s">S</span>
+      <span class="mark__needle"></span>
+      <span class="mark__dot"></span>
+    </span>
+    <span class="nav__brand-name">Luxury Skin</span>
+    <span class="nav__brand-sub">Electrolysis</span>
+  </a>
+
+  <div class="nav__actions">
+    <a class="btn btn-ink nav__cta" href="#visit" (click)="$event.preventDefault(); goToSection('visit')">Book Consultation</a>
+    <button
+      type="button"
+      class="nav__toggle"
+      [attr.aria-expanded]="navOpen()"
+      aria-controls="mobile-menu"
+      aria-label="Toggle menu"
+      (click)="toggleNav()"
+    >
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<nav
+  id="mobile-menu"
+  class="mobile-menu"
+  [class.mobile-menu--open]="navOpen()"
+  aria-label="Mobile"
+>
+  <a href="#services" (click)="$event.preventDefault(); goToSection('services')">Services</a>
+  <a href="#process" (click)="$event.preventDefault(); goToSection('process')">How It Works</a>
+  <a href="#pricing" (click)="$event.preventDefault(); goToSection('pricing')">Pricing</a>
+  <a href="#faq" (click)="$event.preventDefault(); goToSection('faq')">FAQ</a>
+  <a class="btn btn-ink" href="#visit" (click)="$event.preventDefault(); goToSection('visit')">Book Consultation</a>
+</nav>
