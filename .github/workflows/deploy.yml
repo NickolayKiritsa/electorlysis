@@ -29,6 +29,10 @@ jobs:
 
       - run: npx ng build --base-href /electorlysis/
 
+      # GitHub Pages serves this file (with a real 404 status) for any path
+      # that doesn't match a prerendered route.
+      - run: cp dist/luxury-skin-electrolysis/browser/not-found/index.html dist/luxury-skin-electrolysis/browser/404.html
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist/luxury-skin-electrolysis/browser

@@ -9,9 +9,11 @@ import { Meta } from '@angular/platform-browser';
 })
 export class PrivacyPolicy {
   constructor() {
-    inject(Meta).updateTag({
+    const meta = inject(Meta);
+    meta.updateTag({
       name: 'description',
       content: 'How Luxury Skin Electrolysis collects, uses, and protects your information.',
     });
+    meta.updateTag({ name: 'robots', content: 'index, follow' });
   }
 }

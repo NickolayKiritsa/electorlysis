@@ -34,11 +34,13 @@ export class Home {
   private readonly destroyRef = inject(DestroyRef);
 
   constructor() {
-    inject(Meta).updateTag({
+    const meta = inject(Meta);
+    meta.updateTag({
       name: 'description',
       content:
         'Permanent, FDA-recognized electrolysis hair removal in Kirkland, WA — one-on-one, by appointment only.',
     });
+    meta.updateTag({ name: 'robots', content: 'index, follow' });
 
     // Arriving from another page (e.g. footer "Book Consultation" while on /privacy-policy)
     // lands here with a fragment — scroll to that section once the page has rendered.

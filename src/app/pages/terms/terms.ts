@@ -9,9 +9,11 @@ import { Meta } from '@angular/platform-browser';
 })
 export class Terms {
   constructor() {
-    inject(Meta).updateTag({
+    const meta = inject(Meta);
+    meta.updateTag({
       name: 'description',
       content: "The terms that govern using Luxury Skin Electrolysis's website and booking a consultation.",
     });
+    meta.updateTag({ name: 'robots', content: 'index, follow' });
   }
 }

@@ -1,0 +1,20 @@
+<section class="notfound">
+  <span class="notfound__digits" aria-hidden="true">404</span>
+
+  <h1>This page didn't make it.</h1>
+  <p class="notfound__lede">
+    The link may be old, or the address mistyped. Here's where you probably
+    meant to go:
+  </p>
+
+  <div class="notfound__actions">
+    <a routerLink="/" class="btn btn-ink">Back to Home</a>
+  </div>
+
+  <nav class="notfound__links" aria-label="Popular sections">
+    <a href="#services" (click)="$event.preventDefault(); sectionNav.goTo('services')">Services</a>
+    <a href="#pricing" (click)="$event.preventDefault(); sectionNav.goTo('pricing')">Pricing</a>
+    <a href="#faq" (click)="$event.preventDefault(); sectionNav.goTo('faq')">FAQ</a>
+    <a href="#visit" (click)="$event.preventDefault(); sectionNav.goTo('visit')">Book a Consultation</a>
+  </nav>
+</section>

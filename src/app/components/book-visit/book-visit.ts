@@ -1,5 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { RevealOnScroll } from '../../shared/directives/reveal-on-scroll';
 
 interface VisitRequest {
@@ -16,8 +17,8 @@ interface VisitRequest {
 })
 export class BookVisit {
   private readonly fb = inject(FormBuilder);
+  private readonly router = inject(Router);
 
-  protected readonly submitted = signal(false);
   protected readonly copied = signal(false);
 
   protected readonly form = this.fb.group({
@@ -44,11 +45,11 @@ export class BookVisit {
     }
 
     const request: VisitRequest = this.form.getRawValue();
-    // TODO: wire up to a real booking/CRM endpoint — this only confirms locally for now.
+    // TODO: wire up to a real booking/CRM endpoint — this only logs locally for now.
     console.info('Visit request captured locally (no backend wired yet):', request);
 
-    this.submitted.set(true);
     this.form.reset();
+    this.router.navigateByUrl('/thank-you');
   }
 
   protected async copyAddress(): Promise<void> {
