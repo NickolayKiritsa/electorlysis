@@ -26,11 +26,6 @@ const jobs = [
   ['spotlight-photo.jpg', 'spotlight-photo-mobile.jpg', { width: 600, format: 'jpg', quality: 70 }],
   ['spotlight-photo.jpg', 'spotlight-photo-mobile.webp', { width: 600, format: 'webp', quality: 68 }],
 
-  // Ambiance band
-  ['process-photo.jpg', 'process-photo.webp', { format: 'webp', quality: 72 }],
-  ['process-photo.jpg', 'process-photo-mobile.jpg', { width: 500, format: 'jpg', quality: 70 }],
-  ['process-photo.jpg', 'process-photo-mobile.webp', { width: 500, format: 'webp', quality: 68 }],
-
   // Marble texture tile — small, fixed tile size, no responsive variant needed.
   // Quality 40: this is high-entropy noise (granite speckle), so WebP needs a
   // lower quality than photos to actually beat the JPEG — tiled at 460px and

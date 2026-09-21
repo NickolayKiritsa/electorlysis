@@ -1,0 +1,109 @@
+<section class="body-areas" id="body-areas">
+  <div class="body-areas__head reveal" appRevealOnScroll>
+    <span class="body-areas__eyebrow">Where We Work</span>
+    <h2>This isn't just brows and lips. It's your whole body.</h2>
+    <p class="body-areas__lede">
+      Electrolysis works anywhere hair grows. These are the areas clients ask
+      for most.
+    </p>
+  </div>
+
+  <div class="body-areas__carousel reveal" appRevealOnScroll [appRevealOnScrollDelay]="100">
+    <button
+      type="button"
+      class="body-areas__nav body-areas__nav--prev"
+      aria-label="Previous areas"
+      (click)="scrollByCard(-1)"
+    >
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 5l-7 7 7 7"></path></svg>
+    </button>
+
+    <ul class="body-areas__track" #track>
+      <li class="area-card">
+        <picture>
+          <source type="image/webp" srcset="images/area-bikini.webp" />
+          <img src="images/area-bikini.jpg" alt="Bikini area electrolysis" loading="lazy" decoding="async" />
+        </picture>
+        <div class="area-card__scrim"></div>
+        <div class="area-card__body">
+          <span class="area-card__name">Bikini</span>
+          <p class="area-card__desc">Bikini line, inner &amp; outer areas &mdash; smooth and precise.</p>
+        </div>
+      </li>
+
+      <li class="area-card">
+        <picture>
+          <source type="image/webp" srcset="images/area-underarms.webp" />
+          <img src="images/area-underarms.jpg" alt="Underarms electrolysis" loading="lazy" decoding="async" />
+        </picture>
+        <div class="area-card__scrim"></div>
+        <div class="area-card__body">
+          <span class="area-card__name">Underarms</span>
+          <p class="area-card__desc">Smooth, confident, long-lasting results.</p>
+        </div>
+      </li>
+
+      <li class="area-card">
+        <picture>
+          <source type="image/webp" srcset="images/area-legs.webp" />
+          <img src="images/area-legs.jpg" alt="Legs electrolysis" loading="lazy" decoding="async" />
+        </picture>
+        <div class="area-card__scrim"></div>
+        <div class="area-card__body">
+          <span class="area-card__name">Legs</span>
+          <p class="area-card__desc">Full legs, or the areas that matter most to you.</p>
+        </div>
+      </li>
+
+      <li class="area-card">
+        <picture>
+          <source type="image/webp" srcset="images/area-abdomen.webp" />
+          <img src="images/area-abdomen.jpg" alt="Abdomen electrolysis" loading="lazy" decoding="async" />
+        </picture>
+        <div class="area-card__scrim"></div>
+        <div class="area-card__body">
+          <span class="area-card__name">Abdomen / Stomach</span>
+          <p class="area-card__desc">Clean lines and lasting smoothness.</p>
+        </div>
+      </li>
+
+      <li class="area-card">
+        <picture>
+          <source type="image/webp" srcset="images/area-chest.webp" />
+          <img src="images/area-chest.jpg" alt="Chest electrolysis" loading="lazy" decoding="async" />
+        </picture>
+        <div class="area-card__scrim"></div>
+        <div class="area-card__body">
+          <span class="area-card__name">Chest / Breasts</span>
+          <p class="area-card__desc">For a cleaner, more comfortable everyday feel.</p>
+        </div>
+      </li>
+
+      <li class="area-card">
+        <picture>
+          <source type="image/webp" srcset="images/area-back.webp" />
+          <img src="images/area-back.jpg" alt="Back electrolysis" loading="lazy" decoding="async" />
+        </picture>
+        <div class="area-card__scrim"></div>
+        <div class="area-card__body">
+          <span class="area-card__name">Back</span>
+          <p class="area-card__desc">The hard-to-reach areas, fully treated.</p>
+        </div>
+      </li>
+    </ul>
+
+    <button
+      type="button"
+      class="body-areas__nav body-areas__nav--next"
+      aria-label="Next areas"
+      (click)="scrollByCard(1)"
+    >
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 5l7 7-7 7"></path></svg>
+    </button>
+  </div>
+
+  <p class="body-areas__more reveal" appRevealOnScroll [appRevealOnScrollDelay]="200">
+    Plus shoulders, arms, neck, hairline, and anywhere else you'd like to
+    discuss &mdash; every area is mapped out at your consultation.
+  </p>
+</section>

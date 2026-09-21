@@ -59,7 +59,7 @@
 
 .pricing__row {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   padding: 22px 32px;
   background: var(--milk);
   border-bottom: 1px solid var(--hairline);
@@ -70,14 +70,8 @@
   }
 
   @media (max-width: 640px) {
-    grid-template-columns: 1fr 1fr;
     padding: 16px 20px;
-
-    .pricing__best-for {
-      grid-column: 1 / 3;
-      order: 3;
-      font-size: 13px;
-    }
+    font-size: 13px;
   }
 }
 
@@ -94,11 +88,12 @@
   background: var(--cream);
 }
 
-.pricing__length {
+.pricing__service {
   font-weight: 600;
+  color: var(--ink);
 }
 
-.pricing__best-for {
+.pricing__length {
   color: var(--body-soft);
 }
 

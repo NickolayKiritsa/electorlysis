@@ -11,7 +11,7 @@ export const routes: Routes = [
   {
     path: '',
     component: Home,
-    title: 'Luxury Skin Electrolysis — Permanent Hair Removal in Kirkland, WA',
+    title: 'Luxury Skin Electrolysis — Permanent Hair Removal in Auburn, WA',
   },
   { path: 'privacy-policy', component: PrivacyPolicy, title: 'Privacy Policy — Luxury Skin Electrolysis' },
   { path: 'terms', component: Terms, title: 'Terms of Service — Luxury Skin Electrolysis' },

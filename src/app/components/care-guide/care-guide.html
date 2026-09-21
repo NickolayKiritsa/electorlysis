@@ -1,0 +1,27 @@
+<section class="care" id="care">
+  <div class="care__grid">
+
+    <div class="care__col reveal" appRevealOnScroll>
+      <span class="care__eyebrow">Before Your Appointment</span>
+      <h3>Come as you are &mdash; just a little prepared.</h3>
+      <ul class="care__list">
+        @for (item of beforeItems; track item) {
+          <li><span class="care__bullet" aria-hidden="true"></span>{{ item }}</li>
+        }
+      </ul>
+    </div>
+
+    <div class="care__divider" aria-hidden="true"></div>
+
+    <div class="care__col reveal" appRevealOnScroll [appRevealOnScrollDelay]="120">
+      <span class="care__eyebrow">Aftercare</span>
+      <h3>A little care goes a long way.</h3>
+      <ul class="care__list">
+        @for (item of aftercareItems; track item) {
+          <li><span class="care__bullet" aria-hidden="true"></span>{{ item }}</li>
+        }
+      </ul>
+    </div>
+
+  </div>
+</section>

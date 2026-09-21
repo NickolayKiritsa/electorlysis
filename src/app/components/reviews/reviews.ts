@@ -26,14 +26,14 @@ export class Reviews {
       initial: 'W',
       rating: 5,
       relativeTime: '2 weeks ago',
-      text: "I'd tried laser twice before with no real results — electrolysis at Luxury Skin is the first thing that's actually worked. Claire is meticulous and the studio feels more like a quiet spa than a clinic.",
+      text: "I'd tried laser twice before with no real results — electrolysis at Luxury Skin is the first thing that's actually worked. Tatiana is meticulous and the studio feels more like a quiet spa than a clinic.",
     },
     {
       name: 'Priya S.',
       initial: 'P',
       rating: 5,
       relativeTime: '1 month ago',
-      text: 'Booking was easy and the consultation was genuinely no-pressure. Six sessions in on my chin and upper lip and the regrowth has slowed dramatically. Worth every appointment.',
+      text: 'Booking was easy and the consultation was genuinely no-pressure. Six sessions in on my underarms and the regrowth has slowed dramatically. Worth every appointment.',
     },
     {
       name: 'Meredith L.',

@@ -50,7 +50,7 @@ export class Faq {
     },
     {
       question: 'What areas do you treat?',
-      answer: 'Almost anywhere: face, brows, underarms, bikini line, legs, back, chest, and more.',
+      answer: 'Anywhere on the body: underarms, bikini line, legs, abdomen, chest, back, and more.',
     },
     {
       question: 'How long should the hair be?',

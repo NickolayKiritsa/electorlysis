@@ -1,23 +1,23 @@
 <section class="pricing" id="pricing">
   <div class="pricing__head reveal" appRevealOnScroll>
     <span class="pricing__eyebrow">Investment</span>
-    <h2>Pricing</h2>
+    <h2>Body Electrolysis Pricing</h2>
     <p>
-      Electrolysis is billed by session length, not by body area &mdash;
-      because everyone's hair and skin are different.
+      Billed by session length, not by body area &mdash; book the time that
+      fits what you're treating.
     </p>
   </div>
 
   <div class="pricing__table reveal" appRevealOnScroll [appRevealOnScrollDelay]="100">
     <div class="pricing__row pricing__row--head">
-      <span>Session Length</span>
-      <span>Best For</span>
+      <span>Service</span>
+      <span>Duration</span>
       <span class="pricing__price">Price</span>
     </div>
     @for (row of rows; track row.length; let i = $index) {
       <div class="pricing__row" [class.pricing__row--alt]="i % 2 === 1">
+        <span class="pricing__service">{{ row.service }}</span>
         <span class="pricing__length">{{ row.length }}</span>
-        <span class="pricing__best-for">{{ row.bestFor }}</span>
         <span class="pricing__price pricing__price--value">{{ row.price }}</span>
       </div>
     }
@@ -36,6 +36,6 @@
   </div>
 
   <div class="pricing__cta reveal" appRevealOnScroll [appRevealOnScrollDelay]="240">
-    <a href="#visit" class="btn btn-ink">Book Your Consultation</a>
+    <a href="https://luxuryskinelectrolysis.booksy.com/a/" target="_blank" rel="noopener" class="btn btn-ink">Book Now</a>
   </div>
 </section>

@@ -18,9 +18,9 @@ export class SiteHeader {
     'FDA-recognized — truly permanent',
     'Complimentary consultations',
     'One-on-one care, every visit',
-    '(425) 555-0148',
+    '(253) 269-8989',
     'Ask about multi-session packages',
-    'Serving Kirkland, WA',
+    'Serving Auburn, WA',
   ];
 
   protected toggleNav(): void {

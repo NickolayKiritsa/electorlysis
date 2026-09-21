@@ -3,9 +3,10 @@ import { ActivatedRoute } from '@angular/router';
 import { Meta } from '@angular/platform-browser';
 import { Hero } from '../../components/hero/hero';
 import { About } from '../../components/about/about';
+import { BodyAreas } from '../../components/body-areas/body-areas';
 import { Services } from '../../components/services/services';
-import { AmbianceBand } from '../../components/ambiance-band/ambiance-band';
 import { Process } from '../../components/process/process';
+import { CareGuide } from '../../components/care-guide/care-guide';
 import { Pricing } from '../../components/pricing/pricing';
 import { Faq } from '../../components/faq/faq';
 import { Reviews } from '../../components/reviews/reviews';
@@ -17,9 +18,10 @@ import { BookVisit } from '../../components/book-visit/book-visit';
   imports: [
     Hero,
     About,
+    BodyAreas,
     Services,
-    AmbianceBand,
     Process,
+    CareGuide,
     Pricing,
     Faq,
     Reviews,
@@ -38,7 +40,7 @@ export class Home {
     meta.updateTag({
       name: 'description',
       content:
-        'Permanent, FDA-recognized electrolysis hair removal in Kirkland, WA — one-on-one, by appointment only.',
+        'Permanent, FDA-recognized electrolysis hair removal in Auburn, WA — one-on-one, by appointment only.',
     });
     meta.updateTag({ name: 'robots', content: 'index, follow' });
 

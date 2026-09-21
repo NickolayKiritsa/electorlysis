@@ -1,14 +1,14 @@
 <section class="services" id="services">
   <div class="services__head reveal" appRevealOnScroll>
     <h2>What We Offer</h2>
-    <p>Electrolysis is our specialty. These support it.</p>
+    <p>Not a menu of treatments &mdash; one specialty, done thoroughly.</p>
   </div>
 
   <div class="spotlight reveal" appRevealOnScroll [appRevealOnScrollDelay]="100">
     <div class="spotlight__photo"></div>
     <div class="spotlight__content">
-      <span class="spotlight__tag">Our Flagship &mdash; Permanent</span>
-      <h3>Electrolysis</h3>
+      <span class="spotlight__tag">Our Specialty &mdash; Permanent</span>
+      <h3>Body Electrolysis</h3>
       <p class="spotlight__desc">
         The only FDA-recognized permanent hair removal method &mdash; safe for
         every skin tone and hair color, including the ones laser can't reach.
@@ -20,24 +20,5 @@
       </ul>
       <a href="#pricing" class="spotlight__cta">View Pricing &rarr;</a>
     </div>
-  </div>
-
-  <div class="index">
-    @for (row of rows; track row.name; let i = $index) {
-      <div
-        class="index__row reveal"
-        appRevealOnScroll
-        [appRevealOnScrollDelay]="i * 90"
-      >
-        <span class="index__number">{{ row.number }}</span>
-        <h3 class="index__name">{{ row.name }}</h3>
-        <p class="index__desc">
-          {{ row.description }}
-          @if (row.link) {
-            <a class="link-accent" [href]="row.link.href">{{ row.link.label }} &rarr;</a>
-          }
-        </p>
-      </div>
-    }
   </div>
 </section>
