@@ -1,0 +1,9 @@
+include:
+  - project: "quantum-group4360331/ci-template"
+    ref: main
+    file: [".main.gitlab-ci.yml"]
+
+variables:
+  CI_PROJECT_NAME: electrolysis
+  CI_APP_DOMAIN: luxury-skin-electrolysis.com
+  CI_APP_PATH: /

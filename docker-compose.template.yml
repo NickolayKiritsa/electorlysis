@@ -1,0 +1,30 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ${CI_REGISTRY_IMAGE}:${CI_COMMIT_SHA}
+    container_name: ${CI_PROJECT_NAME}_app
+    restart: unless-stopped
+    networks:
+      - app-network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.${CI_PROJECT_NAME}_app.rule=Host(`${CI_APP_DOMAIN}`) && PathPrefix(`${CI_APP_PATH}`)"
+      - "traefik.http.routers.${CI_PROJECT_NAME}_app.entrypoints=websecure"
+      - "traefik.http.routers.${CI_PROJECT_NAME}_app.tls.certresolver=myresolver"
+      - "traefik.http.routers.${CI_PROJECT_NAME}_app.tls=true"
+      - "traefik.http.services.${CI_PROJECT_NAME}_app.loadbalancer.server.port=8080"
+    deploy:
+      resources:
+        reservations:
+          cpus: '0.5'
+          memory: 128M
+        limits:
+          cpus: '1'
+          memory: 512M
+
+
+networks:
+  app-network:
+    external: true
