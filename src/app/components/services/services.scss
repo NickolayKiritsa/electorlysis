@@ -51,31 +51,10 @@
   overflow: hidden;
   background-color: var(--ink);
   $overlay: linear-gradient(150deg, rgba(183, 154, 114, 0.25) 0%, rgba(60, 46, 34, 0.35) 100%);
-  background-image: #{$overlay}, url('../../../../public/images/spotlight-photo-mobile.jpg');
-  background-image:
-    #{$overlay},
-    -webkit-image-set(url('../../../../public/images/spotlight-photo-mobile.webp') 1x);
-  background-image:
-    #{$overlay},
-    image-set(
-      url('../../../../public/images/spotlight-photo-mobile.webp') type('image/webp') 1x,
-      url('../../../../public/images/spotlight-photo-mobile.jpg') type('image/jpeg') 1x
-    );
-  background-size: cover;
+  background-image: #{$overlay}, url('../../../../public/images/master.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center center;
-
-  @media (min-width: 641px) {
-    background-image: #{$overlay}, url('../../../../public/images/spotlight-photo.jpg');
-    background-image:
-      #{$overlay},
-      -webkit-image-set(url('../../../../public/images/spotlight-photo.webp') 1x);
-    background-image:
-      #{$overlay},
-      image-set(
-        url('../../../../public/images/spotlight-photo.webp') type('image/webp') 1x,
-        url('../../../../public/images/spotlight-photo.jpg') type('image/jpeg') 1x
-      );
-  }
 
   @media (max-width: 760px) {
     width: 100%;
