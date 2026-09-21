@@ -1,3 +1,4 @@
+/*
 :host {
   display: block;
   background: var(--ink);
@@ -96,4 +97,297 @@
   font-size: 14px;
   line-height: 1.65;
   color: var(--muted-on-dark);
+}
+*/
+:host {
+  display: block;
+  background: var(--ink);
+  padding: 80px 48px;
+
+  @media (max-width: 860px) {
+    padding: 60px 20px;
+  }
+}
+
+.process__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 52px;
+
+  @media (max-width: 860px) {
+    margin-bottom: 36px;
+    gap: 8px;
+  }
+
+  h2 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: clamp(26px, 3.4vw, 38px);
+    color: var(--milk);
+    margin: 0;
+  }
+
+  p {
+    font-size: 15px;
+    color: var(--muted-on-dark);
+    margin: 0;
+  }
+}
+
+.process__eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* =========================================================
+   DESKTOP: Интерактивная горизонтальная шторка
+   ========================================================= */
+.curtain {
+  display: flex;
+  height: 440px;
+  max-width: 1140px;
+  margin: 0 auto;
+  gap: 12px;
+}
+
+.curtain__panel {
+  position: relative;
+  display: flex;
+  flex: 1;
+  min-width: 72px;
+  border-radius: 4px;
+  background: rgba(250, 246, 239, 0.025);
+  border: 1px solid rgba(250, 246, 239, 0.08);
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+  transition: flex 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+  background 0.3s ease,
+  border-color 0.3s ease;
+
+  &:hover {
+    border-color: rgba(250, 246, 239, 0.18);
+  }
+
+  &.is-active {
+    flex: 3.6;
+    background: rgba(250, 246, 239, 0.045);
+    border-color: rgba(var(--accent-rgb, 190, 160, 120), 0.35);
+
+    .curtain__number {
+      color: var(--accent);
+    }
+
+    .curtain__spine-title {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .curtain__content {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(0);
+      transition-delay: 0.12s;
+    }
+
+    .curtain__progress-fill {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.curtain__spine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 72px;
+  flex-shrink: 0;
+  padding: 28px 0;
+  user-select: none;
+}
+
+.curtain__number {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(250, 246, 239, 0.45);
+  transition: color 0.3s ease;
+}
+
+.curtain__spine-title {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  margin-top: 24px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: var(--muted-on-dark);
+  white-space: nowrap;
+  transition: opacity 0.25s ease;
+}
+
+.curtain__content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(12px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  overflow: hidden;
+}
+
+.curtain__inner {
+  min-width: 320px;
+  max-width: 480px;
+  padding: 32px 36px 32px 12px;
+}
+
+.curtain__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.curtain__badge {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.curtain__duration {
+  font-size: 11px;
+  color: rgba(250, 246, 239, 0.4);
+  padding-left: 12px;
+  border-left: 1px solid rgba(250, 246, 239, 0.15);
+}
+
+.curtain__title {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(22px, 2.2vw, 28px);
+  line-height: 1.25;
+  color: var(--milk);
+  margin: 0 0 12px;
+}
+
+.curtain__desc {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--muted-on-dark);
+  margin: 0 0 24px;
+}
+
+.curtain__progress-track {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: rgba(250, 246, 239, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.curtain__progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+}
+
+/* =========================================================
+   MOBILE (< 860px): Никаких свернутых полосок.
+   Все карточки полностью раскрыты с полным текстом.
+   ========================================================= */
+@media (max-width: 860px) {
+  .curtain {
+    flex-direction: column;
+    height: auto;
+    gap: 14px;
+  }
+
+  .curtain__panel {
+    flex: none !important;
+    flex-direction: column;
+    height: auto !important;
+    min-width: 0;
+    cursor: default;
+    padding: 24px 20px;
+    background: rgba(250, 246, 239, 0.03) !important;
+    border: 1px solid rgba(250, 246, 239, 0.08) !important;
+
+    /* Всегда открыто на мобилке */
+    .curtain__number {
+      color: var(--accent);
+    }
+
+    .curtain__content {
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+      transform: none !important;
+      overflow: visible;
+    }
+  }
+
+  /* В шапке мобильной карточки выводим номер */
+  .curtain__spine {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    margin-bottom: 12px;
+  }
+
+  /* Повернутый вертикальный заголовок убираем, он дублирует заголовок в карточке */
+  .curtain__spine-title {
+    display: none;
+  }
+
+  .curtain__number {
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .curtain__inner {
+    min-width: 0;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .curtain__meta {
+    margin-bottom: 8px;
+  }
+
+  .curtain__title {
+    font-size: 19px;
+    margin-bottom: 8px;
+  }
+
+  .curtain__desc {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Десктопный прогресс-бар на статичной карточке не нужен */
+  .curtain__indicator {
+    display: none;
+  }
 }
